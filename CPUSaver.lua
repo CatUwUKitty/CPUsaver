@@ -1,21 +1,16 @@
-game:GetService("RunService"):Set3dRenderingEnabled(false)
-
+local IS_ROBLOX_ACTIVE = false
 local UIS = game:GetService("UserInputService")
-local IsWindowFocused = false
 
 UIS.WindowFocused:Connect(function()
-	IsWindowFocused = true
-end)
-UIS.WindowFocusReleased:Connect(function()
-	IsWindowFocused = false
+	IS_ROBLOX_ACTIVE = true
 end)
 
-while task.wait() do
-    if IsWindowFocused then
-        game:GetService("RunService"):Set3dRenderingEnabled(true)
-    elseif IsWindowFocused == false then
-        game:GetService("RunService"):Set3dRenderingEnabled(false)
-    end
+UIS.WindowFocusReleased:Connect(function()
+	IS_ROBLOX_ACTIVE = false
+end)
+
+function isrbxactive()
+	return IS_ROBLOX_ACTIVE
 end
 
-queue_on_teleport(loadstring(game:HttpGet("https://raw.githubusercontent.com/CatUwUKitty/CPUsaver/main/CPUSaver.lua"))())
+getgenv().isrbxactive = newcclosure(isrbxactive)
