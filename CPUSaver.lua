@@ -1,16 +1,5 @@
-local IS_ROBLOX_ACTIVE = false
-local UIS = game:GetService("UserInputService")
-
-UIS.WindowFocused:Connect(function()
-	IS_ROBLOX_ACTIVE = true
-end)
-
-UIS.WindowFocusReleased:Connect(function()
-	IS_ROBLOX_ACTIVE = false
-end)
-
-function isrbxactive()
-	return IS_ROBLOX_ACTIVE
+while task.wait() do
+    local a={[1]="next_story"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
+    local a={[1]="NextLevel"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
+    wait(5)
 end
-
-getgenv().isrbxactive = newcclosure(isrbxactive)
