@@ -4,26 +4,25 @@
             ["avatar_url"] = "https://tr.rbxcdn.com/8e885e939ad70638b40e74a7c84d1530/150/150/Image/Png",
             ["embeds"] = {
                 {
-                    ["author"] = {
-                        ["name"] = "Anime Adventures |  Results V2 ✔️",
-                        ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
-                    },
                     ["thumbnail"] = {
                         ['url'] = thumbnails_avatar.data[1].imageUrl,
                     },
-                    ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱\nExecutors : 🎮 "..exec.." 🎮 ",
+                    ["description"] = " Player Name : "..game:GetService("Players").LocalPlayer.Name.." \nExecutors : 🎮 "..exec.." 🎮 ",
                     ["color"] = 110335,
                     ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                     ["fields"] = {
                         {
-                            ["name"] ="Current Level ✨ & Gems 💎 & Gold 💰 & Portals 🌀",
                             ["value"] = "```ini
-                                        \nGems: "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎 Summer Pearls: "..tostring(comma_value(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)).. "
-                                        \nCurrent Portal : "..tostring(Count_Portal_list) .." 🌀```",
+                                        \nGems: "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎 
+                                        \nSummer Pearls: "..tostring(comma_value(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)).. " 🦪 and "..tostring(Count_Portal_list) .." Portals 🌀```",
                         },
                         {
                             ["name"] ="Results :",
-                            ["value"] = "```ini\nWorld : "..world.. " 🌏\nMap Name : "..tostring(MapsNameTEST).. " 🗺️ 🎚️\nPortal Tier : " ..tostring(poratltierS).." 🌀\nResults : "..result.. " ⚔️\nWave End : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛```",
+                            ["value"] = "```ini \nMap Name : "..tostring(MapsNameTEST).. " 🗺️
+                                                \nPortal Tier : " ..tostring(poratltierS).." 🌀
+                                                \nResults : **"..result.. "** ⚔️
+                                                \nWave End : " ..tostring(waves[2]).." 🌊
+                                                \nTime : " ..tostring(ttime[2]).." ⌛```",
                             ["inline"] = true
                         },
                         {
@@ -31,9 +30,7 @@
                             ["value"] = "```ini\n"  
                                             .. comma_value(gold) .." Gold 💰\n"
                                             .. comma_value(gems) .." Gems 💎\n+"
-                                            .. comma_value(SummerPearls - SummerPearlsOld) .." Summer Pearls 🦪\n"
-                                            .. comma_value(xp[1]) .." XP 🧪\n"
-                                            .. trophy .." Trophy 🏆```",
+                                            .. comma_value(SummerPearls - SummerPearlsOld) .." Summer Pearls 🦪```",
                         },
                         {
                             ["name"] ="Items Drop :",
