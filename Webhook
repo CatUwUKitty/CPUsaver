@@ -18,19 +18,15 @@
                         },
                         {
                             ["name"] ="Results :",
-                            ["value"] = "```ini \nMap Name : "..tostring(MapsNameTEST).. " 🗺️
-                                                \nPortal Tier : " ..tostring(poratltierS).." 🌀
-                                                \nResults : **"..result.. "** ⚔️
-                                                \nWave End : " ..tostring(waves[2]).." 🌊
-                                                \nTime : " ..tostring(ttime[2]).." ⌛```",
+                            ["value"] = "```ini \nMap: "..tostring(MapsNameTEST).. " 🗺️
+                                                \nPortal Tier " ..tostring(poratltierS)..", " ..tostring(poratChallengeS).."
+                                                \nResults: **"..result.. "** ⚔️
+                                                \nWave " ..tostring(waves[2]).." 🌊, " ..tostring(ttime[2]).." ⌛```",
                             ["inline"] = true
                         },
                         {
                             ["name"] ="Rewards :",
-                            ["value"] = "```ini\n"  
-                                            .. comma_value(gold) .." Gold 💰\n"
-                                            .. comma_value(gems) .." Gems 💎\n+"
-                                            .. comma_value(SummerPearls - SummerPearlsOld) .." Summer Pearls 🦪```",
+                            ["value"] = "```ini \n".. comma_value(gems) .." Gems 💎 +".. comma_value(SummerPearls - SummerPearlsOld) .." Summer Pearls 🦪```",
                         },
                         {
                             ["name"] ="Items Drop :",
