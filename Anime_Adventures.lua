@@ -317,7 +317,7 @@ function webhook()
     --end
 
         if TextDropLabel == "" then
-            TextDropLabel = "Not Have Items Drops"
+            TextDropLabel = "No item drops"
         end
 
         local data = {
@@ -326,29 +326,36 @@ function webhook()
             ["avatar_url"] = "https://tr.rbxcdn.com/8e885e939ad70638b40e74a7c84d1530/150/150/Image/Png",
             ["embeds"] = {
                 {
+                    ["author"] = {
+                        ["name"] = "Anime Adventures",
+                        ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
+                    },
                     ["thumbnail"] = {
                         ['url'] = thumbnails_avatar.data[1].imageUrl,
                     },
-                    ["description"] = " Player Name : "..game:GetService("Players").LocalPlayer.Name..,
+                    ["description"] = " Player Name : **"..game:GetService("Players").LocalPlayer.Name.."** \nExecutors : 🎮 "..exec.." 🎮 ",
                     ["color"] = 110335,
                     ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                     ["fields"] = {
                         {
-                            ["value"] = "```ini
-                                        "\nGems: "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎" 
-                                        "\nSummer Pearls: "..tostring(comma_value(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)).. " 🦪 and "..tostring(Count_Portal_list) .." Portals" 🌀```",
+                            ["name"] ="Current Level ✨ & Gems 💎 & Gold 💰 & Portals 🌀",
+                            ["value"] = "```ini\n"
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value)).. " 💰\nCurrent Gems : "
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Trophies : "
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats.trophies.Value)).. " 🏆\nCurrent Portal : "
+                                        ..tostring(Count_Portal_list) .." 🌀\nSummer Pearls : "
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)).. " 🦪```",
                         },
                         {
                             ["name"] ="Results :",
-                            ["value"] = "```ini \nMap: "..tostring(MapsNameTEST).. " 🗺️
-                                                "\nPortal Tier " ..tostring(poratltierS)..", " ..tostring(poratChallengeS).."
-                                                "\nResults: **"..result.. "** ⚔️
-                                                "\nWave " ..tostring(waves[2]).." 🌊, " ..tostring(ttime[2]).." ⌛```",
+                            ["value"] = "```ini\nWorld : "..world.. " 🌏\nMap Name : "..tostring(MapsNameTEST).. " 🗺️\nMap Id : "..name.. " 🗺️\nDifficulty : "..tostring(MapDiff3).. " 🎚️\nPortal Tier : " ..tostring(poratltierS).." 🌀\nChallenge : " ..tostring(poratChallengeS).." 🌀\nResults : "..result.. " ⚔️\nWave End : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛\nAll Kill Count : " ..tostring(comma_value(game.Players.LocalPlayer._stats.kills.Value)).. " ⚔️\nDMG Deal : " ..tostring(comma_value(game.Players.LocalPlayer._stats.damage_dealt.Value)).."⚔️```",
                             ["inline"] = true
                         },
                         {
                             ["name"] ="Rewards :",
-                            ["value"] = "```ini \n".. comma_value(gems) .." Gems 💎 +".. comma_value(SummerPearls - SummerPearlsOld) .." Summer Pearls 🦪```",
+                            ["value"] = "```ini\n"  
+                                            .. comma_value(gems) .." Gems 💎\n+"
+                                            .. comma_value(SummerPearls - SummerPearlsOld) .." Summer Pearls 🦪\n",
                         },
                         {
                             ["name"] ="Items Drop :",
@@ -359,7 +366,6 @@ function webhook()
                 }
             }
         }
-        
         
         local porn = game:GetService("HttpService"):JSONEncode(data)
         local headers = {["content-type"] = "application/json"}
