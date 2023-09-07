@@ -329,14 +329,14 @@ function webhook()
                     ["thumbnail"] = {
                         ['url'] = thumbnails_avatar.data[1].imageUrl,
                     },
-                    ["description"] = " Player Name : "..game:GetService("Players").LocalPlayer.Name.." \nExecutors : 🎮 "..exec.." 🎮 ",
+                    ["description"] = " Player Name : "..game:GetService("Players").LocalPlayer.Name..,
                     ["color"] = 110335,
                     ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                     ["fields"] = {
                         {
                             ["value"] = "```ini
                                         "\nGems: "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎" 
-                                        "\nSummer Pearls: "..tostring(comma_value(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)).. " 🦪 and "..tostring(Count_Portal_list) .." Portals 🌀```",
+                                        "\nSummer Pearls: "..tostring(comma_value(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)).. " 🦪 and "..tostring(Count_Portal_list) .." Portals" 🌀```",
                         },
                         {
                             ["name"] ="Results :",
