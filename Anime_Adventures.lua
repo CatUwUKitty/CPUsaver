@@ -335,15 +335,15 @@ function webhook()
                     ["fields"] = {
                         {
                             ["value"] = "```ini
-                                        \nGems: "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎 
-                                        \nSummer Pearls: "..tostring(comma_value(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)).. " 🦪 and "..tostring(Count_Portal_list) .." Portals 🌀```",
+                                        "\nGems: "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎" 
+                                        "\nSummer Pearls: "..tostring(comma_value(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)).. " 🦪 and "..tostring(Count_Portal_list) .." Portals 🌀```",
                         },
                         {
                             ["name"] ="Results :",
                             ["value"] = "```ini \nMap: "..tostring(MapsNameTEST).. " 🗺️
-                                                \nPortal Tier " ..tostring(poratltierS)..", " ..tostring(poratChallengeS).."
-                                                \nResults: **"..result.. "** ⚔️
-                                                \nWave " ..tostring(waves[2]).." 🌊, " ..tostring(ttime[2]).." ⌛```",
+                                                "\nPortal Tier " ..tostring(poratltierS)..", " ..tostring(poratChallengeS).."
+                                                "\nResults: **"..result.. "** ⚔️
+                                                "\nWave " ..tostring(waves[2]).." 🌊, " ..tostring(ttime[2]).." ⌛```",
                             ["inline"] = true
                         },
                         {
