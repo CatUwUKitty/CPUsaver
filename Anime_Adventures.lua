@@ -355,7 +355,7 @@ function webhook()
                             ["name"] ="Rewards :",
                             ["value"] = "```ini\n"  
                                             .. comma_value(gems) .." Gems 💎\n+"
-                                            .. comma_value(SummerPearls - SummerPearlsOld) .." Summer Pearls 🦪\n",
+                                            .. comma_value(SummerPearls - SummerPearlsOld) .." Summer Pearls 🦪```",
                         },
                         {
                             ["name"] ="Items Drop :",
