@@ -338,15 +338,17 @@ function webhook()
                     ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                     ["fields"] = {
                         {
-                            ["value"] = "```ini"
-                                        .."\nCurrent Gems : "
-                                        ..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Portal : "
+                            ["name"] ="Current Level ✨ & Gems 💎 & Gold 💰 & Portals 🌀",
+                            ["value"] = "```ini\n"
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value)).. " 💰\nCurrent Gems : "
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Trophies : "
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats.trophies.Value)).. " 🏆\nCurrent Portal : "
                                         ..tostring(Count_Portal_list) .." 🌀\nSummer Pearls : "
                                         ..tostring(comma_value(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)).. " 🦪```",
                         },
                         {
                             ["name"] ="Results :",
-                            ["value"] = "```ini\nMap Name : "..tostring(MapsNameTEST).. " \nPortal Tier : " ..tostring(poratltierS).." 🌀\nChallenge : " ..tostring(poratChallengeS).." 🌀\nResults : "..result.. " ⚔️\nWave End : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛```",
+                            ["value"] = "```ini\nWorld : "..world.. " 🌏\nMap Name : "..tostring(MapsNameTEST).. " 🗺️\nMap Id : "..name.. " 🗺️\nDifficulty : "..tostring(MapDiff3).. " 🎚️\nPortal Tier : " ..tostring(poratltierS).." 🌀\nChallenge : " ..tostring(poratChallengeS).." 🌀\nResults : "..result.. " ⚔️\nWave End : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛\nAll Kill Count : " ..tostring(comma_value(game.Players.LocalPlayer._stats.kills.Value)).. " ⚔️\nDMG Deal : " ..tostring(comma_value(game.Players.LocalPlayer._stats.damage_dealt.Value)).."⚔️```",
                             ["inline"] = true
                         },
                         {
