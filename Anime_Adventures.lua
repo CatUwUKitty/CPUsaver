@@ -3019,11 +3019,11 @@ local function LowCPUModeT()
     end,{enabled = Settings.lowCpuMode2})
 
     task.spawn(function()
-        while task.wait(0.5) do
-            if IS_ROBLOX_ACTIVE ~= true and Settings.lowCpuMode then
+        while task.wait() do
+            if isrbxactive() and Settings.lowCpuMode then
                 setfpscap(tonumber(Settings.FPSCAPNum))
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
-            else
+            else if isrbxactive() ~= true then
                 setfpscap(240)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
             end
