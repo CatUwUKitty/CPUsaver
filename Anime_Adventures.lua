@@ -3019,7 +3019,7 @@ local function LowCPUModeT()
     end,{enabled = Settings.lowCpuMode2})
 
     task.spawn(function()
-        while task.wait() do
+        while task.wait(0.5) do
             if IS_ROBLOX_ACTIVE ~= true and Settings.lowCpuMode then
                 setfpscap(tonumber(Settings.FPSCAPNum))
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
@@ -3060,23 +3060,24 @@ LG1:Cheat("Checkbox","Enable Laggy ", function(bool)
 	saveSettings()
 end,{enabled = Settings.EnableLag})
 
+
 task.spawn(function()
 	while task.wait() do
-        local l_wave = game:GetService("Workspace"):WaitForChild("_wave_num")
+	local l_wave = game:GetService("Workspace"):WaitForChild("_wave_num")
 		if Settings.EnableLag and tonumber(Settings.LagatWave) <= l_wave.Value then
-    delaylag = tonumber(Settings.delag or 1.5)
-    while wait(tonumber(Settings.delag or 1.5)) do --// don't change it's the best
-    game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge * math.huge)
-    local function getmaxvalue(val)
-       --local mainvalueifonetable = 499999
-       local mainvalueifonetable = tonumber(Settings.lagimpact or 499999)
-       if type(val) ~= "number" then
-           return nil
-       end
-       local calculateperfectval = (mainvalueifonetable/(val+2))
-       return calculateperfectval
-    end
-     
+    			delaylag = tonumber(Settings.delag or 1.5)
+    			while wait(tonumber(Settings.delag or 1.5)) do --// don't change it's the best
+    			game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge * math.huge)
+    			local function getmaxvalue(val)
+		        --local mainvalueifonetable = 499999
+		        local mainvalueifonetable = tonumber(Settings.lagimpact or 499999)
+		        	if type(val) ~= "number" then
+			   		return nil
+		       		end
+		       local calculateperfectval = (mainvalueifonetable/(val+2))
+		       return calculateperfectval
+		end
+						
     --local function bomb(tableincrease, tries)
 function bomb(tableincrease, tries)
     local maintable = {}
@@ -3306,6 +3307,7 @@ function SnipeMerchant()
         saveSettings()
     end,{enabled = Settings.AutoBuySummer})
 
+if Settings.AutoBuySummer then
     task.spawn(function()
         while task.wait() do
             if Settings.AutoBuySummer then
@@ -3319,6 +3321,7 @@ function SnipeMerchant()
             end
         end
     end)
+end
 
     ----------------------------------------------------------------
     --Auto Open Egg
@@ -3370,6 +3373,7 @@ for i,v in pairs(get_inventory_items_unique_items()) do
         WebhookSkin[v['item_id']] = WebhookSkin[v['item_id']] + 1
     end
 end
+
 
 task.spawn(function()
     while task.wait() do
@@ -3878,17 +3882,6 @@ local function startChallenge()
     end
 end
 ----------------------------------
---test fixportal
-function getBorosPortals()
-    local portals = {}
-    for _, item in pairs(get_inventory_items_unique_items()) do
-        if item["item_id"] == "portal_boros_g" then
-            table.insert(portals, item)
-        end
-    end
-    return portals
-end
-
 function getDemonPortals()
     local portals = {}
     for _, item in pairs(get_inventory_items_unique_items()) do
@@ -3941,17 +3934,6 @@ function getSummerPortals()
 end
 
 --Secret Portals
-
-function getSecretDoflamingo()
-    local portals = {}
-    for _, item in pairs(get_inventory_items_unique_items()) do
-        if item["item_id"] == "portal_item__doflamingo" then
-            table.insert(portals, item)
-        end
-    end
-    return portals
-end
-
 function getSecretEclipse()
     local portals = {}
     for _, item in pairs(get_inventory_items_unique_items()) do
