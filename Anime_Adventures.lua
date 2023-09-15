@@ -3283,7 +3283,7 @@ function SnipeMerchant()
     SummerItem:Cheat("Dropdown", "Select Item Summer",function(pornname)
         getgenv().portalnameC = pornname
         saveSettings()
-    end, { options = {"summer_portal_item_contract","capsule_summer"}, default = getgenv().portalnameC})
+    end, { options = {"capsule_summer","summer_portal_item_contract"}, default = getgenv().portalnameC})
 
     SummerItem:Cheat("Dropdown", "Select Total Item",function(value)
         Settings.SummerNum = value
