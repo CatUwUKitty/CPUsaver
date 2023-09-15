@@ -3307,7 +3307,6 @@ function SnipeMerchant()
         saveSettings()
     end,{enabled = Settings.AutoBuySummer})
 
-if Settings.AutoBuySummer then
     task.spawn(function()
         while task.wait() do
             if Settings.AutoBuySummer then
@@ -3321,7 +3320,6 @@ if Settings.AutoBuySummer then
             end
         end
     end)
-end
 
     ----------------------------------------------------------------
     --Auto Open Egg
