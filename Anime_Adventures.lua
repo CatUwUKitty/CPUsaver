@@ -3023,7 +3023,7 @@ local function LowCPUModeT()
             if isrbxactive() and Settings.lowCpuMode then
                 setfpscap(tonumber(Settings.FPSCAPNum))
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
-            else if isrbxactive() ~= true then
+            else
                 setfpscap(240)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
             end
