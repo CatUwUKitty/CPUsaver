@@ -2976,6 +2976,8 @@ end
 ---------------------------------------------
 -------------- LOWW CPU Config --------------
 ---------------------------------------------
+settings().Rendering.QualityLevel = 1
+UserSettings():GetService'UserGameSettings'.MasterVolume = 0
 local function LowCPUModeT()
 
     --New Fix isrbxactive
